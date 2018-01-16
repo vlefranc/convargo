@@ -69,7 +69,7 @@ The next exercises goals are to
 
 1. Fork the project via `github`
 1. Clone the project `git clone https://github.com/YOUR_USERNAME/convargo`
-1. Solve each exercises inside `index.js` file with JavaScript
+1. Solve each exercises inside [./public/index.js](./public/index.js) file with JavaScript
 1. Once the exercise is solved, commit something like `git add -A && git commit -m "feat(price): decrease pricing for longer rentals"` ([why following a convention?](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits))
 1. 5 exercises, so ideally 5 commits
 1. Don't forget to push before the end of the workshop
