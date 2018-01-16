@@ -1,3 +1,7 @@
+![dbz](./dbz.jpg) <!-- .element height="75%" width="75%" -->
+
+---
+
 2018 french startup
 
 ---
@@ -43,7 +47,7 @@ Focus on the price platform feature
 
 1. compute the ship price for the `shippers`
 2. compute the profit for the `truckers`
-3. compute the commission for `convargo`
+3. compute the commission `convargo`
 
 ---
 
@@ -94,6 +98,9 @@ Commission
 
 * 30% of the shipping price
 * insurance → half of commission
+
+---
+
 * convargo → the rest
 
 ---
