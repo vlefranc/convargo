@@ -172,9 +172,43 @@ var i ;
 }
 
 
-
-
-
 console.log(deliveries);
 
 // Exercise 2
+
+function getPercentage(object)
+{
+  var percent = 1 ;
+  if(object.volume>25)
+  {
+    percent=0.5;
+  }
+  else
+  {
+    if(object.volume>10)
+    {
+      percent = 0.3;
+    }
+    else
+    {
+      if(object.volume>5)
+      {
+        percent = 0.1;
+      }
+    }
+  }
+  return percent;
+   
+}
+
+function exercise2()
+{
+  var i ;
+  for (i = 0; i < deliveries.length; i++) { 
+    var per = getPercentage(deliveries[i]);
+    var deduction = deliveries[i].price * per
+    deliveries[i].price=deliveries[i].price - deduction;
+  }
+}
+
+console.log(deliveries);
