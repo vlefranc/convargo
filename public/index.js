@@ -149,6 +149,9 @@ console.log(deliveries);
 console.log(actors);
 
 // Exercise 1
+
+// function that helps figuring out which trucker corresponds to the delivery and returns the correct truckerid
+
 function getTruckerId(_index)
 {
   var j ;
@@ -165,8 +168,14 @@ function exercise1()
 {
 var i ;
   for (i = 0; i < deliveries.length; i++) { 
+
+    // first, we get the index of the trucker
+
     var index = deliveries[i].truckerId;
     var id = getTruckerId(index);
+
+    // second, we calculate the shipping price and update the delivery
+
     var price = deliveries[i].distance*truckers[id].pricePerKm+deliveries[i].volume*truckers[id].pricePerVolume;
     deliveries[i].price = price;
   }
@@ -177,6 +186,7 @@ console.log(deliveries);
 
 // Exercise 2
 
+// function that calculates the percentage according to the volume of an object
 function getPercentage(object)
 {
   var percent = 0 ;
@@ -206,8 +216,14 @@ function exercise2()
 {
   var i ;
   for (i = 0; i < deliveries.length; i++) { 
+
+    // first we calculate the amount deducted
+
     var per = getPercentage(deliveries[i]);
-    var deduction = deliveries[i].price * per
+    var deduction = deliveries[i].price * per;
+
+    //second we update de price
+
     deliveries[i].price=deliveries[i].price - deduction;
   }
 }
@@ -216,6 +232,7 @@ console.log(deliveries);
 
 //Exercise 3
 
+// function that gets the value of the treasury according to the distance
 function getTreasury(object)
 {
   var distance = object.distance;
@@ -259,6 +276,35 @@ function exercise3()
         var extra = deliveries[i].volume;
         deliveries[i].price = deliveries[i].price + extra;
       }
+    }
+  }
+
+  //Exercise 5 
+
+  function exercise5()
+  {
+    var i;
+    for(i = 0; i < actors.length; i++)
+    {
+      //shipper
+
+      actors[i].payment[0] = deliveries[i].price;
+
+      //trucker
+
+      actors[i].payment[1] = deliveries[i].price - deliveries[i].price*0.3;
+
+      //insurance
+      
+      actors[i].payment[2] = deliveries[i].commission.insurance;
+      
+      //treasury
+      
+      actors[i].payment[3] = deliveries[i].commission.treasury;
+      
+      //convargo
+      
+      actors[i].payment[4] = deliveries[i].commission.convargo;
     }
   }
 
