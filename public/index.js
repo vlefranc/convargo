@@ -147,3 +147,16 @@ const actors = [{
 console.log(truckers);
 console.log(deliveries);
 console.log(actors);
+
+// Exercise 1
+function exercise1(deliveries){
+var i ;
+  for (i = 0; i < deliveries.length; i++) { 
+    var price = deliveries[i].distance+deliveries[i].volume;
+    deliveries[i].price = price;
+}
+
+console.log(deliveries);
+
+
+}
