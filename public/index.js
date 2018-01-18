@@ -178,7 +178,7 @@ console.log(deliveries);
 
 function getPercentage(object)
 {
-  var percent = 1 ;
+  var percent = 0 ;
   if(object.volume>25)
   {
     percent=0.5;
@@ -212,3 +212,37 @@ function exercise2()
 }
 
 console.log(deliveries);
+
+//Exercise 3
+
+function getTreasury(object)
+{
+  var distance = object.distance;
+  var treasury = Math.trunc(distance/500);
+  return treasury;
+}
+
+function exercise3()
+{
+  var i ;
+  for (i = 0; i < deliveries.length; i++) { 
+
+    // first we calculate the commission, the insurance, the treasury
+
+    var commission = deliveries[i].price * 0.3;
+    var insurance = commission/2;
+    var treasury = getTreasury(deliveries[i]);
+
+    // second we deduct what we have calculated from the commission to figure out what convargo keeps
+
+    var convargo = commission - treasury - insurance;
+
+    // lastly, we update the what we know in the deliveries
+
+    deliveries[i].insurance = insurance;
+    deliveries[i].treasury = treasury;
+    deliveries[i].convargo = convargo;
+
+  }
+  
+}
