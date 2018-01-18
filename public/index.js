@@ -149,14 +149,32 @@ console.log(deliveries);
 console.log(actors);
 
 // Exercise 1
-function exercise1(deliveries){
+function getTruckerId(_index)
+{
+  var j ;
+  for (j = 0; j < truckers.length; j++) { 
+    if (_index == truckers[j].id)
+    {
+      var id = j;
+    }
+  }
+return id
+}
+
+function exercise1(){
 var i ;
   for (i = 0; i < deliveries.length; i++) { 
-    var price = deliveries[i].distance+deliveries[i].volume;
+    var index = deliveries[i].truckerId;
+    var id = getTruckerId(index);
+    var price = deliveries[i].distance*truckers[id].pricePerKm+deliveries[i].volume*truckers[id].pricePerVolume;
     deliveries[i].price = price;
+  }
 }
+
+
+
+
 
 console.log(deliveries);
 
-
-}
+// Exercise 2
