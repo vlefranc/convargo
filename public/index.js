@@ -161,7 +161,8 @@ function getTruckerId(_index)
 return id
 }
 
-function exercise1(){
+function exercise1()
+{
 var i ;
   for (i = 0; i < deliveries.length; i++) { 
     var index = deliveries[i].truckerId;
@@ -239,10 +240,25 @@ function exercise3()
 
     // lastly, we update the what we know in the deliveries
 
-    deliveries[i].insurance = insurance;
-    deliveries[i].treasury = treasury;
-    deliveries[i].convargo = convargo;
+    deliveries[i].commission.insurance = insurance;
+    deliveries[i].commission.treasury = treasury;
+    deliveries[i].commission.convargo = convargo;
 
   }
-  
 }
+
+  //Exercise 4
+
+  function exercise4()
+  {
+    var i;
+    for (i = 0; i < deliveries.length; i++) 
+    { 
+      if(deliveries[i].options.deductibleReduction == true)
+      {
+        var extra = deliveries[i].volume;
+        deliveries[i].price = deliveries[i].price + extra;
+      }
+    }
+  }
+
